@@ -1,0 +1,120 @@
+header {
+  display: grid;
+  grid-template-columns: 0.9fr 9.1fr;
+  padding: 2.5rem 0;
+}
+
+.site-title {
+  margin: auto;
+  padding-right: 7.5vw;
+}
+
+.site-title a {
+  font-family: "acumin-pro";
+  font-size: 1.7rem;
+  white-space: nowrap;
+  color: black;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.nav-link {
+  position: fixed;
+  display: inline;
+  font-family: Poppins;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2.8rem;
+  text-align: center;
+  color: black;
+  left: 0;
+  right: 0;
+  padding: 1.1rem;
+  transition: bottom ease 0.4s;
+}
+
+.nav-link-1 {
+  bottom: 50%;
+}
+
+.nav-link-2 {
+  bottom: 40%;
+}
+
+.nav-link-selected-underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.1rem;
+  margin: auto;
+  border-bottom: solid 2.2px rgb(78, 78, 78);
+}
+
+.nav-link-1-selected-underline {
+  width: 11rem;
+}
+
+.nav-link-2-selected-underline {
+  width: 13.2rem;
+}
+
+.mobile-nav img {
+  height: 23px;
+  width: 23px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 7%;
+  margin: auto;
+  transition: bottom ease 0.4s;
+}
+
+@media (max-width: 575px) {
+  .site-title a {
+    font-size: 2.1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    grid-template-columns: 1fr auto;
+    padding: clamp(2.2rem, 3vw, 5rem) 0 1vw;
+  }
+
+  .site-title {
+    padding-right: initial;
+    margin: initial;
+  }
+
+  .site-title a {
+    font-size: 3rem;
+  }
+
+  .desktop-nav {
+    display: initial;
+  }
+
+  .desktop-nav a {
+    font-family: Poppins;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: black;
+    margin-left: clamp(1.5rem, 3vw, 3.2rem);
+    align-items: center;
+  }
+
+  .desktop-nav img {
+    position: relative;
+    height: 30.75px;
+    width: 30.75px;
+    top: 5.25px;
+  }
+
+  .desktop-nav-link-selected-underline {
+    border-bottom: solid 2.7px rgb(78, 78, 78);
+    padding: 0.1rem 0;
+  }
+}

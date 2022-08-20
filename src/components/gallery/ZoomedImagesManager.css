@@ -1,0 +1,143 @@
+.zoomed-image-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.zoomed-image-header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  padding: clamp(13.5px, 1.7vw, 25.6px) clamp(13.5px, 1.7vw, 25.6px) 0
+    clamp(13.5px, 1.7vw, 25.6px);
+}
+
+.zoomed-image-header img {
+  height: 28px;
+  width: 28px;
+  cursor: pointer;
+}
+
+.zoomed-image-container {
+  display: flex;
+  justify-content: center;
+  height: calc(100% - clamp(90px, 13vw, 140px));
+  padding: 1% 6%;
+  z-index: 1;
+}
+
+.zoomed-image-desktop-control-container,
+.zoomed-image-desktop-right-control,
+.zoomed-image-desktop-left-control {
+  display: hidden;
+}
+
+.zoomed-image {
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+  cursor: grab;
+  user-select: none;
+}
+
+.zoomed-image-will-move-from-right {
+  position: relative;
+  transition: left ease 0.2s, opacity ease 0.3s;
+}
+
+.zoomed-image-will-move-from-left {
+  position: relative;
+  transition: right ease 0.2s, opacity ease 0.3s;
+}
+
+.zoomed-image-is-right {
+  left: 90px;
+  opacity: 0;
+}
+
+.zoomed-image-is-left {
+  right: 90px;
+  opacity: 0;
+}
+
+.zoomed-image-is-centered-from-right {
+  left: 0;
+  opacity: 1;
+}
+
+.zoomed-image-is-centered-from-left {
+  right: 0;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .zoomed-image-header img {
+    height: 42px;
+    width: 42px;
+    cursor: pointer;
+  }
+
+  .zoomed-image-container {
+    padding: 1% 7.8%;
+  }
+
+  .zoomed-image-desktop-control-container {
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    height: calc(100% - clamp(90px, 13vw, 140px));
+    width: 100%;
+    padding: 1% 2.2%;
+    z-index: 2;
+    user-select: none;
+  }
+
+  .zoomed-image-desktop-right-control {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .zoomed-image-desktop-left-control {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .zoomed-image-desktop-right-control img,
+  .zoomed-image-desktop-left-control img {
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+  }
+
+  .zoomed-image {
+    cursor: initial;
+  }
+
+  .zoomed-image-will-move-from-right,
+  .zoomed-image-will-move-from-left {
+    position: initial;
+    transition: opacity ease 0.4s;
+  }
+
+  .zoomed-image-is-right {
+    left: 0;
+    opacity: 0;
+  }
+
+  .zoomed-image-is-left {
+    right: 0;
+    opacity: 0;
+  }
+}

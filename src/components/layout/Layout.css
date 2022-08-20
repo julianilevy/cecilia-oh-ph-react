@@ -1,0 +1,79 @@
+#root {
+  display: grid !important;
+  grid-template-rows: auto auto 1fr auto !important;
+  min-height: 100vh !important;
+  padding: 0 6% !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+/*#region Animated Burguer Menu Icon */
+
+/* https://www.w3schools.com/howto/howto_css_menu_icon.asp */
+
+.burguer-button {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: black;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.bar-change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+  transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+/* Fade out the second bar */
+.bar-change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.bar-change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/*#endregion */
+
+/*#region Fade In & Out */
+
+.can-fade {
+  transition: opacity ease 0.4s !important;
+}
+
+.faded-out {
+  opacity: 0 !important;
+}
+
+.faded-in {
+  opacity: 1 !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/*#endregion */
+
+@media (min-width: 768px) {
+  body {
+    padding: 0 3.3% !important;
+  }
+
+  .burguer-button {
+    display: none !important;
+  }
+}
